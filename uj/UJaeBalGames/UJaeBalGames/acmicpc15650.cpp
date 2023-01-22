@@ -6,6 +6,8 @@ using namespace std;
 int N = 0;
 int M = 0;
 
+// https://www.acmicpc.net/problem/15650
+
 void printArrFunc(const vector<int>& printArr)
 {
 	for (int i = 0; i < printArr.size(); i++)

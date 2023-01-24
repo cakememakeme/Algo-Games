@@ -8,6 +8,7 @@ using namespace std;
 string ltrim(const string&);
 string rtrim(const string&);
 
+//https://www.hackerrank.com/challenges/day-of-the-programmer/problem
 /*
  * Complete the 'dayOfProgrammer' function below.
  *

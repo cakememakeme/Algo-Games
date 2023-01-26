@@ -1,7 +1,9 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 #include <functional>
+
 
 using namespace std;
 
@@ -9,59 +11,57 @@ string ltrim(const string&);
 string rtrim(const string&);
 vector<string> split(const string&);
 
-//https://www.hackerrank.com/challenges/the-hurdle-race/
 /*
- * Complete the 'hurdleRace' function below.
+ * Complete the 'designerPdfViewer' function below.
  *
  * The function is expected to return an INTEGER.
  * The function accepts following parameters:
- *  1. INTEGER k
- *  2. INTEGER_ARRAY height
+ *  1. INTEGER_ARRAY h
+ *  2. STRING word
  */
 
-int hurdleRace(int k, vector<int> height) {
+int designerPdfViewer(vector<int> h, string word) {
 
-    int highestHurdle = k;
+    int highestLetterHeight = 0;
 
-    const int hurdleSize = height.size();
+    const int wordSize = word.size();
+    const int hSize = h.size();
 
-    for(int i = 0; i < hurdleSize; i++)
+    for(int i = 0; i < wordSize; i++)
     {
-        if (highestHurdle < height[i])
-            highestHurdle = height[i];
+        const int hIndex = word[i] - 'a';
+
+        if(hIndex >= 0 && hIndex < hSize)
+        {
+            highestLetterHeight = max(highestLetterHeight, h[hIndex]);
+        }
     }
 
-    return highestHurdle - k;
+    return highestLetterHeight * wordSize;
 }
 
 int main()
 {
-    string first_multiple_input_temp;
-    getline(cin, first_multiple_input_temp);
+    string h_temp_temp;
+    getline(cin, h_temp_temp);
 
-    vector<string> first_multiple_input = split(rtrim(first_multiple_input_temp));
+    vector<string> h_temp = split(rtrim(h_temp_temp));
 
-    int n = stoi(first_multiple_input[0]);
+    vector<int> h(26);
 
-    int k = stoi(first_multiple_input[1]);
+    for (int i = 0; i < 26; i++) {
+        int h_item = stoi(h_temp[i]);
 
-    string height_temp_temp;
-    getline(cin, height_temp_temp);
-
-    vector<string> height_temp = split(rtrim(height_temp_temp));
-
-    vector<int> height(n);
-
-    for (int i = 0; i < n; i++) {
-        int height_item = stoi(height_temp[i]);
-
-        height[i] = height_item;
+        h[i] = h_item;
     }
 
-    int result = hurdleRace(k, height);
+    string word;
+    getline(cin, word);
+
+    int result = designerPdfViewer(h, word);
 
     cout << result << "\n";
-    
+
     return 0;
 }
 

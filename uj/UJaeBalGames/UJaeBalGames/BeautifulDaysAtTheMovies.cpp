@@ -4,62 +4,63 @@
 #include <vector>
 #include <functional>
 
-
 using namespace std;
 
 string ltrim(const string&);
 string rtrim(const string&);
 vector<string> split(const string&);
 
-//https://www.hackerrank.com/challenges/designer-pdf-viewer/problem
+//https://www.hackerrank.com/challenges/beautiful-days-at-the-movies/problem
 /*
- * Complete the 'designerPdfViewer' function below.
+ * Complete the 'beautifulDays' function below.
  *
  * The function is expected to return an INTEGER.
  * The function accepts following parameters:
- *  1. INTEGER_ARRAY h
- *  2. STRING word
+ *  1. INTEGER i
+ *  2. INTEGER j
+ *  3. INTEGER k
  */
 
-int designerPdfViewer(vector<int> h, string word) {
-
-    int highestLetterHeight = 0;
-
-    const int wordSize = word.size();
-    const int hSize = h.size();
-
-    for(int i = 0; i < wordSize; i++)
+int reverseInt(const int n)
+{
+    int remainNum = n;
+    int result = 0;
+    while(remainNum > 0)
     {
-        const int hIndex = word[i] - 'a';
+        result = result * 10 + remainNum % 10;
 
-        if(hIndex >= 0 && hIndex < hSize)
-        {
-            highestLetterHeight = max(highestLetterHeight, h[hIndex]);
-        }
+        remainNum /= 10;
     }
 
-    return highestLetterHeight * wordSize;
+    return result;
+}
+
+int beautifulDays(int i, int j, int k) {
+    int result = 0;
+
+    for(int day = i; day <= j; day++)
+    {
+        if ((day - reverseInt(day)) % k == 0)
+            result++;
+    }
+
+    return result;
 }
 
 int main()
 {
-    string h_temp_temp;
-    getline(cin, h_temp_temp);
+    string first_multiple_input_temp;
+    getline(cin, first_multiple_input_temp);
 
-    vector<string> h_temp = split(rtrim(h_temp_temp));
+    vector<string> first_multiple_input = split(rtrim(first_multiple_input_temp));
 
-    vector<int> h(26);
+    int i = stoi(first_multiple_input[0]);
 
-    for (int i = 0; i < 26; i++) {
-        int h_item = stoi(h_temp[i]);
+    int j = stoi(first_multiple_input[1]);
 
-        h[i] = h_item;
-    }
+    int k = stoi(first_multiple_input[2]);
 
-    string word;
-    getline(cin, word);
-
-    int result = designerPdfViewer(h, word);
+    int result = beautifulDays(i, j, k);
 
     cout << result << "\n";
 

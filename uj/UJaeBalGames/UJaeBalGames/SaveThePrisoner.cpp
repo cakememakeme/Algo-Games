@@ -4,64 +4,50 @@
 #include <vector>
 #include <functional>
 
-
 using namespace std;
 
 string ltrim(const string&);
 string rtrim(const string&);
 vector<string> split(const string&);
 
-//https://www.hackerrank.com/challenges/designer-pdf-viewer/problem
+//https://www.hackerrank.com/challenges/save-the-prisoner/problem
 /*
- * Complete the 'designerPdfViewer' function below.
+ * Complete the 'saveThePrisoner' function below.
  *
  * The function is expected to return an INTEGER.
  * The function accepts following parameters:
- *  1. INTEGER_ARRAY h
- *  2. STRING word
+ *  1. INTEGER n
+ *  2. INTEGER m
+ *  3. INTEGER s
  */
 
-int designerPdfViewer(vector<int> h, string word) {
-
-    int highestLetterHeight = 0;
-
-    const int wordSize = word.size();
-    const int hSize = h.size();
-
-    for(int i = 0; i < wordSize; i++)
-    {
-        const int hIndex = word[i] - 'a';
-
-        if(hIndex >= 0 && hIndex < hSize)
-        {
-            highestLetterHeight = max(highestLetterHeight, h[hIndex]);
-        }
-    }
-
-    return highestLetterHeight * wordSize;
+int saveThePrisoner(int n, int m, int s) {
+    return (m - 1 + s - 1) % n + 1;
 }
 
 int main()
 {
-    string h_temp_temp;
-    getline(cin, h_temp_temp);
+    string t_temp;
+    getline(cin, t_temp);
 
-    vector<string> h_temp = split(rtrim(h_temp_temp));
+    int t = stoi(ltrim(rtrim(t_temp)));
 
-    vector<int> h(26);
+    for (int t_itr = 0; t_itr < t; t_itr++) {
+        string first_multiple_input_temp;
+        getline(cin, first_multiple_input_temp);
+        
+        vector<string> first_multiple_input = split(rtrim(first_multiple_input_temp));
 
-    for (int i = 0; i < 26; i++) {
-        int h_item = stoi(h_temp[i]);
+        int n = stoi(first_multiple_input[0]);
 
-        h[i] = h_item;
+        int m = stoi(first_multiple_input[1]);
+        
+        int s = stoi(first_multiple_input[2]);
+
+        int result = saveThePrisoner(n, m, s);
+
+        cout << result << "\n";
     }
-
-    string word;
-    getline(cin, word);
-
-    int result = designerPdfViewer(h, word);
-
-    cout << result << "\n";
 
     return 0;
 }

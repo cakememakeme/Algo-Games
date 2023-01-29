@@ -84,5 +84,11 @@
     <ClCompile Include="FindDigits.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="AppendAndDelete.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="JumpingOnTheClouds-Revisited.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

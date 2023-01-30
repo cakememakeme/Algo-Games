@@ -45,5 +45,11 @@
     <ClCompile Include="acmicpc11478.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="acmicpc15651.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="acmicpc15652.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

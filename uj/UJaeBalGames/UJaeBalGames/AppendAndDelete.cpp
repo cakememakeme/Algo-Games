@@ -9,6 +9,7 @@ using namespace std;
 string ltrim(const string&);
 string rtrim(const string&);
 
+//https://www.hackerrank.com/challenges/append-and-delete/problem?h_r=profile
 /*
  * Complete the 'appendAndDelete' function below.
  *

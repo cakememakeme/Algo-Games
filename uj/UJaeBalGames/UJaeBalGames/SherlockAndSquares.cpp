@@ -10,6 +10,7 @@ string ltrim(const string&);
 string rtrim(const string&);
 vector<string> split(const string&);
 
+//https://www.hackerrank.com/challenges/sherlock-and-squares/problem
 /*
  * Complete the 'squares' function below.
  *

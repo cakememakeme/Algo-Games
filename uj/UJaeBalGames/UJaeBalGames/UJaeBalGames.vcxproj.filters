@@ -96,5 +96,11 @@
     <ClCompile Include="SherlockAndSquares.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="LibraryFine.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CutAndSticks.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

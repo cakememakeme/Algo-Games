@@ -1,0 +1,9 @@
+print("hello")
+class test:
+    def __init__(self) -> None:
+        self.abc = "abc"
+    def say_abc(self):
+        print(self.abc)
+
+tat = test()
+tat.say_abc()

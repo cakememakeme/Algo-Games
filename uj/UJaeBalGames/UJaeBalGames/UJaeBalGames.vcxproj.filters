@@ -102,5 +102,14 @@
     <ClCompile Include="CutAndSticks.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="NonDivisibleSubset.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="RepeatedString.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="JumpingOnTheClouds.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

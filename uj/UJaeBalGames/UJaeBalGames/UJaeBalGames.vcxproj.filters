@@ -111,5 +111,11 @@
     <ClCompile Include="JumpingOnTheClouds.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="덧칠하기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="연속펄스부분수열의합.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
